@@ -11,11 +11,19 @@ public class ProductoPrimeraNecesidadTest {
 	
 	@BeforeEach
 	public void setUp() {
-		leche = new ProductoPrimeraNecesidad("Leche", 8d, false);
+		// para indicar que un nro es de tipo Double, una de las manerass de asignar es: 29d
+		leche = new ProductoPrimeraNecesidad("Leche", 8d, false, 10);
 	}
 	
 	@Test
 	public void testCalcularPrecio() {
-		assertEquals( Double.valueOf(7.2), leche.getPrecio());
+		assertEquals( 7.2d, leche.getPrecio());
+	}
+	
+	@Test
+	public void testCalcularPrecio2() {
+		ProductoPrimeraNecesidad carne = new ProductoPrimeraNecesidad("carne", 12d, false, 15);
+		
+		assertEquals( 10.2d, carne.getPrecio());
 	}
 }

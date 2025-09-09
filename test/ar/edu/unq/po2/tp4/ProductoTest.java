@@ -12,24 +12,24 @@ public class ProductoTest {
 	
 	@BeforeEach
 	public void setUp() {
-		arroz = new Producto("Arroz", 18.9d, true);
+		arroz = new Producto("Arroz", 18.9d, true,0);
 		vino = new Producto("Vino", 55d);
 	}
 	
 	@Test
 	public void testConstructor() {
 		assertEquals("Arroz", arroz.getNombre());
-		assertEquals( Double.valueOf(18.9), arroz.getPrecio());
+		assertEquals( 18.9d , arroz.getPrecio());
 		assertTrue(arroz.esPrecioCuidado());
 		
 		assertEquals("Vino", vino.getNombre());
-		assertEquals( Double.valueOf(55), vino.getPrecio());
+		assertEquals( 55d, vino.getPrecio());
 		assertFalse(vino.esPrecioCuidado());
 	}
 	
 	@Test
 	public void testAumentarPrecio() {
 		arroz.aumentarPrecio(1.5);
-		assertEquals( Double.valueOf(20.4), arroz.getPrecio());
+		assertEquals( 20.4d, arroz.getPrecio());
 	}
 }
